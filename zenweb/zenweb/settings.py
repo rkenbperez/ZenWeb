@@ -25,8 +25,13 @@ SECRET_KEY = 'django-insecure-^1w*(sjhz-)q$zl@!md$w&&5ga&67frg=g7&=s&c%-gy$&lfsx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['zenweb.onrender.com','https://zensmp.space/']
-
+ALLOWED_HOSTS = [
+    'zenweb.onrender.com',
+    'zensmp.space',           # Just the domain, no https://
+    'www.zensmp.space',       # Add this too if you use www
+    'localhost',
+    '127.0.0.1',
+]
 
 # Application definition
 
