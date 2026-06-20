@@ -56,7 +56,7 @@ python manage.py migrate
 If using Pipenv without activating a shell:
 
 ```bash
-pipenv run python zenweb/manage.py migrate
+pipenv run python manage.py migrate
 ```
 
 ### 3) Start the development server
@@ -68,7 +68,7 @@ python manage.py runserver
 Pipenv equivalent:
 
 ```bash
-pipenv run python zenweb/manage.py runserver
+pipenv run python manage.py runserver
 ```
 
 Open `http://127.0.0.1:8000/` in your browser.
@@ -83,8 +83,8 @@ python manage.py check
 Pipenv equivalents:
 
 ```bash
-pipenv run python zenweb/manage.py test
-pipenv run python zenweb/manage.py check
+pipenv run python manage.py test
+pipenv run python manage.py check
 ```
 
 ## Deployment Notes
