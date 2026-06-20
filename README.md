@@ -45,8 +45,6 @@ Or, using Pipenv from the repository root:
 git clone https://github.com/rkenbperez/ZenWeb.git
 cd ZenWeb
 pipenv install
-pipenv shell
-cd zenweb
 ```
 
 ### 2) Run database migrations
@@ -58,7 +56,6 @@ python manage.py migrate
 If using Pipenv without activating a shell:
 
 ```bash
-cd ZenWeb
 pipenv run python zenweb/manage.py migrate
 ```
 
@@ -71,7 +68,6 @@ python manage.py runserver
 Pipenv equivalent:
 
 ```bash
-cd ZenWeb
 pipenv run python zenweb/manage.py runserver
 ```
 
@@ -87,7 +83,6 @@ python manage.py check
 Pipenv equivalents:
 
 ```bash
-cd ZenWeb
 pipenv run python zenweb/manage.py test
 pipenv run python zenweb/manage.py check
 ```
