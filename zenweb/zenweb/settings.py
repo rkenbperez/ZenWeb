@@ -127,3 +127,16 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 import os
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+import os
+
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# If you have a custom static folder, make sure it exists
+# Otherwise, remove or comment out STATICFILES_DIRS
+STATICFILES_DIRS = [
+    # Remove this line if the folder doesn't exist:
+    # os.path.join(BASE_DIR, 'static'),
+]
