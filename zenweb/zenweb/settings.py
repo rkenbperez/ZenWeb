@@ -25,8 +25,13 @@ SECRET_KEY = 'django-insecure-^1w*(sjhz-)q$zl@!md$w&&5ga&67frg=g7&=s&c%-gy$&lfsx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = [
+    'zenweb.onrender.com',
+    'zensmp.space',           # Just the domain, no https://
+    'www.zensmp.space',       # Add this too if you use www
+    'localhost',
+    '127.0.0.1',
+]
 
 # Application definition
 
@@ -42,6 +47,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware', 
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -123,3 +129,20 @@ STATIC_URL = 'static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+import os
+
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Where Django looks for static files
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'zen/static'),  # Your images are here
+]
+
+# Storage for production
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
