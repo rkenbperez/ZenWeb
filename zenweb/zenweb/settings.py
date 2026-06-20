@@ -134,9 +134,7 @@ import os
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# If you have a custom static folder, make sure it exists
-# Otherwise, remove or comment out STATICFILES_DIRS
+# Tell Django where to find your static files
 STATICFILES_DIRS = [
-    # Remove this line if the folder doesn't exist:
-    # os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'zen/static'),  # Your images are here!
 ]
