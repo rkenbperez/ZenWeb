@@ -39,16 +39,36 @@ cd ZenWeb/zenweb
 python -m pip install -r requirements.txt
 ```
 
+Or, using Pipenv from the repository root:
+
+```bash
+git clone https://github.com/rkenbperez/ZenWeb.git
+cd ZenWeb
+pipenv install
+```
+
 ### 2) Run database migrations
 
 ```bash
 python manage.py migrate
 ```
 
+If using Pipenv without activating a shell:
+
+```bash
+pipenv run python manage.py migrate
+```
+
 ### 3) Start the development server
 
 ```bash
 python manage.py runserver
+```
+
+Pipenv equivalent:
+
+```bash
+pipenv run python manage.py runserver
 ```
 
 Open `http://127.0.0.1:8000/` in your browser.
@@ -58,6 +78,13 @@ Open `http://127.0.0.1:8000/` in your browser.
 ```bash
 python manage.py test
 python manage.py check
+```
+
+Pipenv equivalents:
+
+```bash
+pipenv run python manage.py test
+pipenv run python manage.py check
 ```
 
 ## Deployment Notes
