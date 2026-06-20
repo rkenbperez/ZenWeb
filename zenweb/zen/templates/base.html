@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %} ZenWeb {% endblock %}</title>
+    <title>{% block title %} ZenSMP {% endblock %}</title>
     
     <!-- Favicon - Fixed static paths -->
     <link rel="icon" type="image/png" sizes="96x96" href="{% static 'images/favicon-96x96.png' %}" />
@@ -33,11 +33,11 @@
         </svg>
       </div>
       <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-        <li><a>Home</a></li>
-        <li><a>Features</a></li>
-        <li><a>Gallery</a></li>
-        <li><a>Rules</a></li>
-        <li><a>Store</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#rules">Rules</a></li>
+        <li><a href="#store">Store</a></li>
       </ul>
     </div>
     <a href="{% url 'home' %}" class="flex items-center gap-2">
@@ -47,11 +47,11 @@
   
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-1">
-      <li><a>Home</a></li>
-      <li><a>Features</a></li>
-      <li><a>Gallery</a></li>
-      <li><a>Rules</a></li>
-      <li><a>Store</a></li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#rules">Rules</a></li>
+      <li><a href="#store">Store</a></li>
     </ul>
   </div>
   
@@ -115,6 +115,48 @@
     </div>
   </nav>
 </footer>
+
+<!-- Smooth Scrolling CSS -->
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Active nav link styling */
+  .menu a.active {
+    color: var(--primary);
+    font-weight: 600;
+  }
+</style>
+
+<!-- Active Link Detection Script -->
+<script>
+// Highlight active nav link based on scroll position
+document.addEventListener('DOMContentLoaded', function() {
+  const sections = ['home', 'features', 'gallery', 'rules', 'store'];
+  const navLinks = document.querySelectorAll('.menu a[href^="#"]');
+  
+  window.addEventListener('scroll', function() {
+    let current = '';
+    sections.forEach(section => {
+      const element = document.getElementById(section);
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        if (rect.top <= 100) {
+          current = section;
+        }
+      }
+    });
+    
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
+  });
+});
+</script>
 
 <script>
 // Canvas Particle System

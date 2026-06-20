@@ -125,239 +125,363 @@
   .slide-caption p {
     color: rgba(255,255,255,0.8);
   }
+  
+  /* Feature icon styles */
+  .feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .rule-icon {
+    font-size: 1.5rem;
+    width: 2.5rem;
+    text-align: center;
+  }
+  
+  /* Dark card styles - only cards */
+  .dark-card {
+    background: rgba(15, 15, 25, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+  }
+  
+  .dark-card:hover {
+    background: rgba(25, 25, 40, 0.98);
+    border-color: rgba(99, 102, 241, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.6);
+  }
+  
+  .dark-rule-card {
+    background: rgba(15, 15, 25, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+  }
+  
+  .dark-rule-card:hover {
+    background: rgba(25, 25, 40, 0.95);
+    border-color: rgba(99, 102, 241, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  }
 </style>
 
-<div class="hero min-h-[70vh] relative hero-bg">
-  <!-- Overlay for better text readability -->
-  <div class="absolute inset-0 bg-black/60"></div>
-  
-  <div class="hero-content text-center relative z-10">
-    <div class="max-w-2xl">
-      <h1 class="text-4xl font-bold text-white">THE ULTIMATE SURVIVAL</h1>
-      <h1 class="text-4xl font-bold text-white">EXPERIENCE</h1>
-      <p class="p-5 text-white/90">
-        Join a thriving community of builders and adventurers. No griefing, custom economy, and massive world borders.
-      </p>
+<!-- ===== HOME SECTION ===== -->
+<section id="home">
+  <div class="hero min-h-[70vh] relative hero-bg">
+    <!-- Overlay for better text readability -->
+    <div class="absolute inset-0 bg-black/60"></div>
+    
+    <div class="hero-content text-center relative z-10">
+      <div class="max-w-2xl">
+        <h1 class="text-4xl font-bold text-white">THE ULTIMATE SURVIVAL</h1>
+        <h1 class="text-4xl font-bold text-white">EXPERIENCE</h1>
+        <p class="p-5 text-white/90">
+          Join a thriving community of builders and adventurers. No griefing, custom economy, and massive world borders.
+        </p>
+        
+        <!-- IP Copy Box -->
+        <div class="flex items-center justify-between gap-2 max-w-[200px] mx-auto mt-2 bg-base-100/90 backdrop-blur-sm rounded-lg px-2 py-1 border border-base-300">
+          <span class="font-mono text-[10px] truncate">play.zensmp.space</span>
+          <button onclick="copyIP()" class="btn btn-primary btn-xs gap-0.5 px-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-2.5 w-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+            </svg>
+            Copy
+          </button>
+        </div>
+
+        <!-- Server Status -->
+        <div class="flex justify-center mt-2" id="server-status-container">
+          <span class="badge badge-ghost gap-1.5 px-3 py-2 bg-base-100/80 backdrop-blur-sm">
+            <span class="inline-block w-1.5 h-1.5 bg-gray-400 rounded-full animate-pulse"></span>
+            Loading...
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURES SECTION ===== -->
+<section id="features">
+  <div class="container mx-auto px-4 py-16">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold">Features</h2>
+      <p class="text-base-content/70 mt-2">What makes ZenSMP special</p>
+    </div>
+    
+    <!-- Features Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="card dark-card p-6 rounded-xl text-center">
+        <div class="flex justify-center">
+          <i class="fas fa-coins feature-icon text-primary"></i>
+        </div>
+        <h3 class="card-title justify-center text-white text-xl font-bold">Custom Economy</h3>
+        <p class="text-white/60 mt-2">A balanced economy with player shops, auctions, and trading systems.</p>
+      </div>
+      <div class="card dark-card p-6 rounded-xl text-center">
+        <div class="flex justify-center">
+          <i class="fas fa-shield-alt feature-icon text-secondary"></i>
+        </div>
+        <h3 class="card-title justify-center text-white text-xl font-bold">No Griefing</h3>
+        <p class="text-white/60 mt-2">Protected builds and claims system to keep your creations safe.</p>
+      </div>
+      <div class="card dark-card p-6 rounded-xl text-center">
+        <div class="flex justify-center">
+          <i class="fas fa-globe-americas feature-icon text-accent"></i>
+        </div>
+        <h3 class="card-title justify-center text-white text-xl font-bold">Massive World</h3>
+        <p class="text-white/60 mt-2">Explore a vast world with diverse biomes and unlimited possibilities.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALLERY SECTION ===== -->
+<section id="gallery">
+  <div class="container mx-auto px-4 py-16">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold">Gallery</h2>
+      <p class="text-base-content/70 mt-2">Check out our amazing builds and community moments</p>
+    </div>
+    
+    <div class="carousel-container">
+      <div class="carousel-track" id="carouselTrack">
+        <!-- Slide 1 -->
+        <div class="carousel-slide">
+          <img src="{% static 'images/gallery/image1.jpg' %}" alt="Gallery Image 1" />
+          <div class="slide-caption">
+            <div>
+              <h3>Epic Build</h3>
+              <p>Amazing medieval castle in the mountains</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Slide 2 -->
+        <div class="carousel-slide">
+          <img src="{% static 'images/gallery/image2.jpg' %}" alt="Gallery Image 2" />
+          <div class="slide-caption">
+            <div>
+              <h3>Community Events</h3>
+              <p>Weekly build competitions and events</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Slide 3 -->
+        <div class="carousel-slide">
+          <img src="{% static 'images/gallery/image3.jpg' %}" alt="Gallery Image 3" />
+          <div class="slide-caption">
+            <div>
+              <h3>Survival Base</h3>
+              <p>Our thriving survival community</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Slide 4 -->
+        <div class="carousel-slide">
+          <img src="{% static 'images/gallery/image4.jpg' %}" alt="Gallery Image 4" />
+          <div class="slide-caption">
+            <div>
+              <h3>Redstone Creations</h3>
+              <p>Incredible redstone contraptions</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Slide 5 -->
+        <div class="carousel-slide">
+          <img src="{% static 'images/gallery/image5.jpg' %}" alt="Gallery Image 5" />
+          <div class="slide-caption">
+            <div>
+              <h3>Community Hub</h3>
+              <p>The heart of our server community</p>
+            </div>
+          </div>
+        </div>
+      </div>
       
-      <!-- IP Copy Box -->
-      <div class="flex items-center justify-between gap-2 max-w-[200px] mx-auto mt-2 bg-base-100/90 backdrop-blur-sm rounded-lg px-2 py-1 border border-base-300">
-        <span class="font-mono text-[10px] truncate">play.zensmp.space</span>
-        <button onclick="copyIP()" class="btn btn-primary btn-xs gap-0.5 px-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-2.5 w-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+      <!-- Navigation Buttons -->
+      <button class="carousel-btn prev" onclick="prevSlide()" aria-label="Previous slide">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="carousel-btn next" onclick="nextSlide()" aria-label="Next slide">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+    
+    <!-- Dots Indicator -->
+    <div class="dots-container" id="dotsContainer">
+      <button class="dot active" data-index="0" onclick="goToSlide(0)"></button>
+      <button class="dot" data-index="1" onclick="goToSlide(1)"></button>
+      <button class="dot" data-index="2" onclick="goToSlide(2)"></button>
+      <button class="dot" data-index="3" onclick="goToSlide(3)"></button>
+      <button class="dot" data-index="4" onclick="goToSlide(4)"></button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RULES SECTION ===== -->
+<section id="rules">
+  <div class="container mx-auto px-4 py-16">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold">Server Rules</h2>
+      <p class="text-base-content/70 mt-2">Keep our community safe and fun for everyone</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+      <div class="dark-rule-card p-4 rounded-xl flex items-start gap-4">
+        <i class="fas fa-handshake rule-icon text-primary"></i>
+        <div>
+          <h3 class="font-bold text-white">Be Respectful</h3>
+          <p class="text-sm text-white/60">Treat all players with respect. No toxic behavior or harassment.</p>
+        </div>
+      </div>
+      <div class="dark-rule-card p-4 rounded-xl flex items-start gap-4">
+        <i class="fas fa-ban rule-icon text-secondary"></i>
+        <div>
+          <h3 class="font-bold text-white">No Griefing</h3>
+          <p class="text-sm text-white/60">Destroying or stealing from other players' builds is not allowed.</p>
+        </div>
+      </div>
+      <div class="dark-rule-card p-4 rounded-xl flex items-start gap-4">
+        <i class="fas fa-gavel rule-icon text-accent"></i>
+        <div>
+          <h3 class="font-bold text-white">No Cheating</h3>
+          <p class="text-sm text-white/60">Hacks, x-ray, and any form of cheating will result in a ban.</p>
+        </div>
+      </div>
+      <div class="dark-rule-card p-4 rounded-xl flex items-start gap-4">
+        <i class="fas fa-comment-dots rule-icon text-primary"></i>
+        <div>
+          <h3 class="font-bold text-white">Keep Chat Clean</h3>
+          <p class="text-sm text-white/60">No spamming, excessive swearing, or inappropriate content.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TIMELINE SECTION ===== -->
+<section id="timeline">
+  <div class="container mx-auto px-4 py-16">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold">Our Journey</h2>
+      <p class="text-base-content/70 mt-2">The story of ZenSMP through the seasons</p>
+    </div>
+    
+    <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+      <!-- Season 1 -->
+      <li>
+        <div class="timeline-middle">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            class="h-5 w-5 text-primary"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+              clip-rule="evenodd"
+            />
           </svg>
-          Copy
-        </button>
-      </div>
-
-      <!-- Server Status -->
-      <div class="flex justify-center mt-2" id="server-status-container">
-        <span class="badge badge-ghost gap-1.5 px-3 py-2 bg-base-100/80 backdrop-blur-sm">
-          <span class="inline-block w-1.5 h-1.5 bg-gray-400 rounded-full animate-pulse"></span>
-          Loading...
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Gallery Carousel Section -->
-<div class="container mx-auto px-4 py-16">
-  <div class="text-center mb-12">
-    <h2 class="text-3xl font-bold">Gallery</h2>
-    <p class="text-base-content/70 mt-2">Check out our amazing builds and community moments</p>
-  </div>
-  
-  <div class="carousel-container">
-    <div class="carousel-track" id="carouselTrack">
-      <!-- Slide 1 -->
-      <div class="carousel-slide">
-        <img src="{% static 'images/gallery/image1.jpg' %}" alt="Gallery Image 1" />
-        <div class="slide-caption">
-          <div>
-            <h3>Epic Build</h3>
-            <p>Amazing medieval castle in the mountains</p>
+        </div>
+        <div class="timeline-start mb-10 md:text-end">
+          <time class="font-mono italic">2019 - 2020</time>
+          <div class="text-lg font-black">Season 1</div>
+          <div class="text-sm text-base-content/70 mb-2">The Longest Season</div>
+          <p>
+            The founding season of Zen. This season laid the groundwork for our community,
+            with players building the first settlements and establishing the core rules and 
+            economy that would define our server. It was a time of exploration and discovery.
+          </p>
+          <div class="mt-2 flex flex-wrap gap-1">
+            <span class="badge badge-primary badge-sm">Founding</span>
+            <span class="badge badge-secondary badge-sm">Exploration</span>
+            <span class="badge badge-accent badge-sm">Community Building</span>
           </div>
         </div>
-      </div>
+        <hr />
+      </li>
       
-      <!-- Slide 2 -->
-      <div class="carousel-slide">
-        <img src="{% static 'images/gallery/image2.jpg' %}" alt="Gallery Image 2" />
-        <div class="slide-caption">
-          <div>
-            <h3>Community Events</h3>
-            <p>Weekly build competitions and events</p>
+      <!-- Season 2 -->
+      <li>
+        <hr />
+        <div class="timeline-middle">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            class="h-5 w-5 text-secondary"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </div>
+        <div class="timeline-end md:mb-10">
+          <time class="font-mono italic">2024 - 2025</time>
+          <div class="text-lg font-black">Season 2</div>
+          <div class="text-sm text-base-content/70 mb-2">Most Active Season</div>
+          <p>
+            The golden age of ZenSMP! This season saw our highest player counts and most 
+            impressive builds. The community flourished with massive collaborative projects,
+            epic bases, and incredible redstone contraptions. The server reached its peak 
+            activity with players from around the world.
+          </p>
+          <div class="mt-2 flex flex-wrap gap-1">
+            <span class="badge badge-primary badge-sm">Peak Activity</span>
+            <span class="badge badge-secondary badge-sm">Massive Builds</span>
+            <span class="badge badge-accent badge-sm">Growing Community</span>
           </div>
         </div>
-      </div>
+        <hr />
+      </li>
       
-      <!-- Slide 3 -->
-      <div class="carousel-slide">
-        <img src="{% static 'images/gallery/image3.jpg' %}" alt="Gallery Image 3" />
-        <div class="slide-caption">
-          <div>
-            <h3>Survival Base</h3>
-            <p>Our thriving survival community</p>
+      <!-- Season 3 -->
+      <li>
+        <hr />
+        <div class="timeline-middle">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            class="h-5 w-5 text-accent"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </div>
+        <div class="timeline-start mb-10 md:text-end">
+          <time class="font-mono italic">2025 - Present</time>
+          <div class="text-lg font-black">Season 3</div>
+          <div class="text-sm text-base-content/70 mb-2">Currently Ongoing</div>
+          <p>
+            The current season of ZenSMP! We're building on the success of previous seasons
+            with fresh new features, improved performance, and exciting community events.
+            Join us now and be part of the next chapter in ZenSMP's story!
+          </p>
+          <div class="mt-2 flex flex-wrap gap-1">
+            <span class="badge badge-success badge-sm">Live Now</span>
+            <span class="badge badge-primary badge-sm">New Features</span>
+            <span class="badge badge-secondary badge-sm">Join Today!</span>
           </div>
         </div>
-      </div>
-      
-      <!-- Slide 4 -->
-      <div class="carousel-slide">
-        <img src="{% static 'images/gallery/image4.jpg' %}" alt="Gallery Image 4" />
-        <div class="slide-caption">
-          <div>
-            <h3>Redstone Creations</h3>
-            <p>Incredible redstone contraptions</p>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Slide 5 -->
-      <div class="carousel-slide">
-        <img src="{% static 'images/gallery/image5.jpg' %}" alt="Gallery Image 5" />
-        <div class="slide-caption">
-          <div>
-            <h3>Community Hub</h3>
-            <p>The heart of our server community</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Navigation Buttons -->
-    <button class="carousel-btn prev" onclick="prevSlide()" aria-label="Previous slide">
-      ❮
-    </button>
-    <button class="carousel-btn next" onclick="nextSlide()" aria-label="Next slide">
-      ❯
-    </button>
+      </li>
+    </ul>
   </div>
-  
-  <!-- Dots Indicator -->
-  <div class="dots-container" id="dotsContainer">
-    <button class="dot active" data-index="0" onclick="goToSlide(0)"></button>
-    <button class="dot" data-index="1" onclick="goToSlide(1)"></button>
-    <button class="dot" data-index="2" onclick="goToSlide(2)"></button>
-    <button class="dot" data-index="3" onclick="goToSlide(3)"></button>
-    <button class="dot" data-index="4" onclick="goToSlide(4)"></button>
-  </div>
-</div>
-
-<!-- Timeline Section -->
-<div class="container mx-auto px-4 py-16">
-  <div class="text-center mb-12">
-    <h2 class="text-3xl font-bold">Our Journey</h2>
-    <p class="text-base-content/70 mt-2">The story of ZenSMP through the seasons</p>
-  </div>
-  
-  <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
-    <!-- Season 1 -->
-    <li>
-      <div class="timeline-middle">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          class="h-5 w-5 text-primary"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-            clip-rule="evenodd"
-          />
-        </svg>
-      </div>
-      <div class="timeline-start mb-10 md:text-end">
-        <time class="font-mono italic">2019 - 2020</time>
-        <div class="text-lg font-black">Season 1</div>
-        <div class="text-sm text-base-content/70 mb-2">The Longest Season</div>
-        <p>
-          The founding season of Zen. This season laid the groundwork for our community,
-          with players building the first settlements and establishing the core rules and 
-          economy that would define our server. It was a time of exploration and discovery.
-        </p>
-        <div class="mt-2 flex flex-wrap gap-1">
-          <span class="badge badge-primary badge-sm">Founding</span>
-          <span class="badge badge-secondary badge-sm">Exploration</span>
-          <span class="badge badge-accent badge-sm">Community Building</span>
-        </div>
-      </div>
-      <hr />
-    </li>
-    
-    <!-- Season 2 -->
-    <li>
-      <hr />
-      <div class="timeline-middle">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          class="h-5 w-5 text-secondary"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-            clip-rule="evenodd"
-          />
-        </svg>
-      </div>
-      <div class="timeline-end md:mb-10">
-        <time class="font-mono italic">2024 - 2025</time>
-        <div class="text-lg font-black">Season 2</div>
-        <div class="text-sm text-base-content/70 mb-2">Most Active Season</div>
-        <p>
-          The golden age of ZenSMP! This season saw our highest player counts and most 
-          impressive builds. The community flourished with massive collaborative projects,
-          epic bases, and incredible redstone contraptions. The server reached its peak 
-          activity with players from around the world.
-        </p>
-        <div class="mt-2 flex flex-wrap gap-1">
-          <span class="badge badge-primary badge-sm">Peak Activity</span>
-          <span class="badge badge-secondary badge-sm">Massive Builds</span>
-          <span class="badge badge-accent badge-sm">Growing Community</span>
-        </div>
-      </div>
-      <hr />
-    </li>
-    
-    <!-- Season 3 -->
-    <li>
-      <hr />
-      <div class="timeline-middle">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          class="h-5 w-5 text-accent"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-            clip-rule="evenodd"
-          />
-        </svg>
-      </div>
-      <div class="timeline-start mb-10 md:text-end">
-        <time class="font-mono italic">2025 - Present</time>
-        <div class="text-lg font-black">Season 3</div>
-        <div class="text-sm text-base-content/70 mb-2">Currently Ongoing</div>
-        <p>
-          The current season of ZenSMP! We're building on the success of previous seasons
-          with fresh new features, improved performance, and exciting community events.
-          Join us now and be part of the next chapter in ZenWeb's story!
-        </p>
-        <div class="mt-2 flex flex-wrap gap-1">
-          <span class="badge badge-success badge-sm">Live Now</span>
-          <span class="badge badge-primary badge-sm">New Features</span>
-          <span class="badge badge-secondary badge-sm">Join Today!</span>
-        </div>
-      </div>
-    </li>
-  </ul>
-</div>
+</section>
 
 <script>
 // Carousel functionality
@@ -409,14 +533,16 @@ let touchEndX = 0;
 
 const carouselContainer = document.querySelector('.carousel-container');
 
-carouselContainer.addEventListener('touchstart', function(e) {
-  touchStartX = e.changedTouches[0].screenX;
-});
+if (carouselContainer) {
+  carouselContainer.addEventListener('touchstart', function(e) {
+    touchStartX = e.changedTouches[0].screenX;
+  });
 
-carouselContainer.addEventListener('touchend', function(e) {
-  touchEndX = e.changedTouches[0].screenX;
-  handleSwipe();
-});
+  carouselContainer.addEventListener('touchend', function(e) {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  });
+}
 
 function handleSwipe() {
   const swipeThreshold = 50;
