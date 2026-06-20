@@ -1,4 +1,4 @@
-{% extends "zen/base.html" %}
+{% extends "base.html" %}
 {% load static %}
 
 {% block content %}
@@ -12,7 +12,7 @@
        Join a thriving community of builders and adventurers. No griefing, custom economy, and massive world borders.
       </p>
       
-      <!-- IP Copy Box - Smaller Width -->
+      <!-- IP Copy Box -->
       <div class="flex items-center justify-between gap-2 max-w-[200px] mx-auto mt-2 bg-base-100 rounded-lg px-2 py-1 border border-base-300">
         <span class="font-mono text-[10px] truncate">play.zensmp.space</span>
         <button onclick="copyIP()" class="btn btn-primary btn-xs gap-0.5 px-2">
@@ -22,6 +22,15 @@
           Copy
         </button>
       </div>
+
+      <!-- Server Status - JavaScript Method -->
+      <div class="flex justify-center mt-2" id="server-status-container">
+        <span class="badge badge-ghost gap-1.5 px-3 py-2">
+          <span class="inline-block w-1.5 h-1.5 bg-gray-400 rounded-full animate-pulse"></span>
+          Loading...
+        </span>
+      </div>
+
     </div>
   </div>
 </div>
@@ -47,6 +56,37 @@ function copyIP() {
     }, 2000);
   });
 }
+
+// Fetch server status from API
+fetch('https://api.mcsrvstat.us/3/december-warehouse.gl.joinmc.link')
+    .then(response => response.json())
+    .then(data => {
+        const container = document.getElementById('server-status-container');
+        if (data.online) {
+            container.innerHTML = `
+                <span class="badge badge-success gap-1.5 px-3 py-2">
+                    <span class="inline-block w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
+                    ${data.players.online}/${data.players.max} Online
+                </span>
+            `;
+        } else {
+            container.innerHTML = `
+                <span class="badge badge-error gap-1.5 px-3 py-2">
+                    <span class="inline-block w-1.5 h-1.5 bg-red-500 rounded-full"></span>
+                    Server Offline
+                </span>
+            `;
+        }
+    })
+    .catch(() => {
+        const container = document.getElementById('server-status-container');
+        container.innerHTML = `
+            <span class="badge badge-warning gap-1.5 px-3 py-2">
+                <span class="inline-block w-1.5 h-1.5 bg-yellow-500 rounded-full"></span>
+                Status Unavailable
+            </span>
+        `;
+    });
 </script>
 
 {% endblock %}
