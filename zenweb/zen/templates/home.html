@@ -10,6 +10,121 @@
     background-position: center;
     background-repeat: no-repeat;
   }
+  
+  /* Carousel container */
+  .carousel-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+  
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+  
+  .carousel-slide {
+    min-width: 100%;
+    height: 500px;
+    position: relative;
+    flex-shrink: 0;
+  }
+  
+  .carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Navigation buttons */
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    backdrop-filter: blur(4px);
+  }
+  
+  .carousel-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-50%) scale(1.1);
+  }
+  
+  .carousel-btn.prev {
+    left: 16px;
+  }
+  
+  .carousel-btn.next {
+    right: 16px;
+  }
+  
+  /* Dots indicator */
+  .dots-container {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.2);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+  }
+  
+  .dot.active {
+    background: var(--primary, #6366f1);
+    width: 32px;
+    border-radius: 5px;
+  }
+  
+  .dot:hover {
+    transform: scale(1.2);
+  }
+  
+  /* Hide scrollbar */
+  .carousel-track::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Caption styles */
+  .slide-caption {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 32px;
+  }
+  
+  .slide-caption h3 {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .slide-caption p {
+    color: rgba(255,255,255,0.8);
+  }
 </style>
 
 <div class="hero min-h-[70vh] relative hero-bg">
@@ -43,6 +158,90 @@
         </span>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- Gallery Carousel Section -->
+<div class="container mx-auto px-4 py-16">
+  <div class="text-center mb-12">
+    <h2 class="text-3xl font-bold">Gallery</h2>
+    <p class="text-base-content/70 mt-2">Check out our amazing builds and community moments</p>
+  </div>
+  
+  <div class="carousel-container">
+    <div class="carousel-track" id="carouselTrack">
+      <!-- Slide 1 -->
+      <div class="carousel-slide">
+        <img src="{% static 'images/gallery/image1.jpg' %}" alt="Gallery Image 1" />
+        <div class="slide-caption">
+          <div>
+            <h3>Epic Build</h3>
+            <p>Amazing medieval castle in the mountains</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Slide 2 -->
+      <div class="carousel-slide">
+        <img src="{% static 'images/gallery/image2.jpg' %}" alt="Gallery Image 2" />
+        <div class="slide-caption">
+          <div>
+            <h3>Community Events</h3>
+            <p>Weekly build competitions and events</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Slide 3 -->
+      <div class="carousel-slide">
+        <img src="{% static 'images/gallery/image3.jpg' %}" alt="Gallery Image 3" />
+        <div class="slide-caption">
+          <div>
+            <h3>Survival Base</h3>
+            <p>Our thriving survival community</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Slide 4 -->
+      <div class="carousel-slide">
+        <img src="{% static 'images/gallery/image4.jpg' %}" alt="Gallery Image 4" />
+        <div class="slide-caption">
+          <div>
+            <h3>Redstone Creations</h3>
+            <p>Incredible redstone contraptions</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Slide 5 -->
+      <div class="carousel-slide">
+        <img src="{% static 'images/gallery/image5.jpg' %}" alt="Gallery Image 5" />
+        <div class="slide-caption">
+          <div>
+            <h3>Community Hub</h3>
+            <p>The heart of our server community</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Navigation Buttons -->
+    <button class="carousel-btn prev" onclick="prevSlide()" aria-label="Previous slide">
+      ❮
+    </button>
+    <button class="carousel-btn next" onclick="nextSlide()" aria-label="Next slide">
+      ❯
+    </button>
+  </div>
+  
+  <!-- Dots Indicator -->
+  <div class="dots-container" id="dotsContainer">
+    <button class="dot active" data-index="0" onclick="goToSlide(0)"></button>
+    <button class="dot" data-index="1" onclick="goToSlide(1)"></button>
+    <button class="dot" data-index="2" onclick="goToSlide(2)"></button>
+    <button class="dot" data-index="3" onclick="goToSlide(3)"></button>
+    <button class="dot" data-index="4" onclick="goToSlide(4)"></button>
   </div>
 </div>
 
@@ -177,6 +376,77 @@
 </div>
 
 <script>
+// Carousel functionality
+let currentSlide = 0;
+const totalSlides = 5;
+const track = document.getElementById('carouselTrack');
+const dots = document.querySelectorAll('.dot');
+
+function updateCarousel() {
+  track.style.transform = `translateX(-${currentSlide * 100}%)`;
+  
+  // Update dots
+  dots.forEach((dot, index) => {
+    if (index === currentSlide) {
+      dot.classList.add('active');
+    } else {
+      dot.classList.remove('active');
+    }
+  });
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % totalSlides;
+  updateCarousel();
+}
+
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+  updateCarousel();
+}
+
+function goToSlide(index) {
+  currentSlide = index;
+  updateCarousel();
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'ArrowRight') {
+    nextSlide();
+  } else if (e.key === 'ArrowLeft') {
+    prevSlide();
+  }
+});
+
+// Touch/swipe support
+let touchStartX = 0;
+let touchEndX = 0;
+
+const carouselContainer = document.querySelector('.carousel-container');
+
+carouselContainer.addEventListener('touchstart', function(e) {
+  touchStartX = e.changedTouches[0].screenX;
+});
+
+carouselContainer.addEventListener('touchend', function(e) {
+  touchEndX = e.changedTouches[0].screenX;
+  handleSwipe();
+});
+
+function handleSwipe() {
+  const swipeThreshold = 50;
+  const diff = touchStartX - touchEndX;
+  
+  if (Math.abs(diff) > swipeThreshold) {
+    if (diff > 0) {
+      nextSlide();
+    } else {
+      prevSlide();
+    }
+  }
+}
+
 function copyIP() {
   const ip = 'play.zensmp.space';
   navigator.clipboard.writeText(ip).then(() => {
