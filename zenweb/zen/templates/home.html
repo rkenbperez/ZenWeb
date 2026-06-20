@@ -181,6 +181,36 @@
   margin-top: 2px;
 }
 
+/* Gold glow effect for feature cards */
+.dark-card {
+  background: rgba(15, 15, 25, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.dark-card:hover {
+  background: rgba(25, 25, 40, 0.98);
+  border-color: rgba(234, 179, 8, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -12px rgba(234, 179, 8, 0.15);
+}
+
+/* Gold icon class */
+.feature-svg {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 1rem;
+  display: block;
+  filter: drop-shadow(0 0 8px rgba(234, 179, 8, 0.2));
+  transition: all 0.3s ease;
+}
+
+.dark-card:hover .feature-svg {
+  filter: drop-shadow(0 0 20px rgba(234, 179, 8, 0.4));
+  transform: scale(1.05);
+}
+
 </style>
 
 <!-- ===== HOME SECTION ===== -->
@@ -224,15 +254,15 @@
 <section id="features">
   <div class="container mx-auto px-4 py-16">
     <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold">Features</h2>
-      <p class="text-base-content/70 mt-2">What makes ZenSMP special</p>
+      <h2 class="text-3xl font-bold text-white">Features</h2>
+      <p class="text-white/70 mt-2">What makes ZenSMP special</p>
     </div>
     
     <!-- Features Grid -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="card dark-card p-6 rounded-xl text-center">
+      <div class="card dark-card p-6 rounded-xl text-center hover:border-yellow-500/50 transition-all duration-300">
         <div class="flex justify-center">
-          <svg class="feature-svg text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor">
+          <svg class="feature-svg text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor">
             <path d="M32.5 96l0 149.5c0 17 6.7 33.3 18.7 45.3l192 192c25 25 65.5 25 90.5 0L483.2 333.3c25-25 25-65.5 0-90.5l-192-192C279.2 38.7 263 32 246 32L96.5 32c-35.3 0-64 28.7-64 64zm112 16a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/>
           </svg>
         </div>
@@ -240,9 +270,9 @@
         <p class="text-white/60 mt-2">A balanced economy with player shops, auctions, and trading systems.</p>
       </div>
       
-      <div class="card dark-card p-6 rounded-xl text-center">
+      <div class="card dark-card p-6 rounded-xl text-center hover:border-yellow-500/50 transition-all duration-300">
         <div class="flex justify-center">
-          <svg class="feature-svg text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor">
+          <svg class="feature-svg text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor">
             <path d="M480-16c6.9 0 13 4.4 15.2 10.9l13.5 40.4 40.4 13.5C555.6 51 560 57.1 560 64s-4.4 13-10.9 15.2l-40.4 13.5-13.5 40.4C493 139.6 486.9 144 480 144s-13-4.4-15.2-10.9l-13.5-40.4-40.4-13.5C404.4 77 400 70.9 400 64s4.4-13 10.9-15.2l40.4-13.5 13.5-40.4C467-11.6 473.1-16 480-16zM321.4 97.4c12.5-12.5 32.8-12.5 45.3 0l80 80c12.5 12.5 12.5 32.8 0 45.3l-10.9 10.9c7.9 22 12.2 45.7 12.2 70.5 0 114.9-93.1 208-208 208S32 418.9 32 304 125.1 96 240 96c24.7 0 48.5 4.3 70.5 12.3l10.9-10.9zM144 304c0-53 43-96 96-96 13.3 0 24-10.7 24-24s-10.7-24-24-24c-79.5 0-144 64.5-144 144 0 13.3 10.7 24 24 24s24-10.7 24-24z"/>
           </svg>
         </div>
@@ -250,9 +280,9 @@
         <p class="text-white/60 mt-2">Protected builds and claims system to keep your creations safe.</p>
       </div>
       
-      <div class="card dark-card p-6 rounded-xl text-center">
+      <div class="card dark-card p-6 rounded-xl text-center hover:border-yellow-500/50 transition-all duration-300">
         <div class="flex justify-center">
-          <svg class="feature-svg text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor">
+          <svg class="feature-svg text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor">
             <path d="M55.7 199.7l30.9 30.9c6 6 14.1 9.4 22.6 9.4l21.5 0c8.5 0 16.6 3.4 22.6 9.4l29.3 29.3c6 6 9.4 14.1 9.4 22.6l0 37.5c0 8.5 3.4 16.6 9.4 22.6l13.3 13.3c6 6 9.4 14.1 9.4 22.6l0 18.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-2.7c0-8.5 3.4-16.6 9.4-22.6l45.3-45.3c6-6 9.4-14.1 9.4-22.6l0-34.7c0-17.7-14.3-32-32-32l-82.7 0c-8.5 0-16.6-3.4-22.6-9.4l-16-16c-4.2-4.2-6.6-10-6.6-16 0-12.5 10.1-22.6 22.6-22.6l34.7 0c12.5 0 22.6-10.1 22.6-22.6 0-6-2.4-11.8-6.6-16l-19.7-19.7C242 130 240 125.1 240 120s2-10 5.7-13.7l17.3-17.3c5.8-5.8 9.1-13.7 9.1-21.9 0-7.2-2.4-13.7-6.4-18.9-3.2-.1-6.4-.2-9.6-.2-95.4 0-175.7 64.2-200.3 151.7zM464 256c0-34.6-8.4-67.2-23.4-95.8-6.4 .9-12.7 3.9-17.9 9.1l-13.4 13.4c-6 6-9.4 14.1-9.4 22.6l0 34.7c0 17.7 14.3 32 32 32l24.1 0c2.5 0 5-.3 7.3-.8 .4-5 .5-10.1 .5-15.2zM0 256a256 256 0 1 1 512 0 256 256 0 1 1 -512 0z"/>
           </svg>
         </div>
