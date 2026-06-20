@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-^1w*(sjhz-)q$zl@!md$w&&5ga&67frg=g7&=s&c%-gy$&lfsx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["https://zenweb.onrender.com"]
 
 
 # Application definition
@@ -123,3 +123,7 @@ STATIC_URL = 'static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+import os
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
