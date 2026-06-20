@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-^1w*(sjhz-)q$zl@!md$w&&5ga&67frg=g7&=s&c%-gy$&lfsx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["https://zenweb.onrender.com"]
+ALLOWED_HOSTS = ['zenweb.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
