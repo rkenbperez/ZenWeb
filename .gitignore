@@ -46,4 +46,6 @@ logs/
 .coverage
 htmlcov/
 .pytest_cache/
-.tox/
+.tox/*.exe
+zenweb/zen/static/css/tailwindcss.exe
+zenweb/zen/static/css/output.css
