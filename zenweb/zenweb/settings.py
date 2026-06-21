@@ -29,7 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'django_tailwind_cli',  # Comment out if not installed
+    'django_tailwind_cli',  # Comment out if not installed
     'zen',
 ]
 
@@ -102,4 +102,4 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Optional: Tailwind (if you're using it)
-# TAILWIND_CLI_USE_DAISY_UI = True
+TAILWIND_CLI_USE_DAISY_UI = True
