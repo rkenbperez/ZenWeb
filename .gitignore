@@ -14,10 +14,10 @@ env/
 pipenv/
 pipenv-*
 
-# Django - GENERATED folders (IGNORE these)
-/staticfiles/          # ← IGNORE collected static files
-/media/                 # ← IGNORE user uploads
-/static/CACHE/          # ← IGNORE compressed cache
+# Django 
+/staticfiles/          
+/media/               
+/static/CACHE/         
 
 # Database
 db.sqlite3
