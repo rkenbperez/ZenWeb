@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual Environment
+venv/
+env/
+.venv/
+pipenv/
+pipenv-*
+
+# Django - GENERATED folders (IGNORE these)
+/staticfiles/          # ← IGNORE collected static files
+/media/                 # ← IGNORE user uploads
+/static/CACHE/          # ← IGNORE compressed cache
+
+# Database
+db.sqlite3
+*.db
+*.sqlite3
+
+# Environment variables
+.env
+.env.local
+*.local.py
+local_settings.py
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
