@@ -36,7 +36,10 @@ ZenWeb/
 ```bash
 git clone https://github.com/rkenbperez/ZenWeb.git
 cd ZenWeb/zenweb
-python -m pip install -r requirements.txt
+```
+```bash
+pipenv sync
+pipenv shell
 ```
 
 ### 2) Run database migrations

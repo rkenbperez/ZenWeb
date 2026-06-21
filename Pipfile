@@ -4,9 +4,24 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "*"
-django-compressor = "*"
-requests = "*"
+asgiref = "==3.11.1"
+certifi = "==2026.6.17"
+charset-normalizer = "==3.4.7"
+dj-database-url = "==3.1.2"
+django = "==6.0.6"
+django-appconf = "==1.2.0"
+django-compressor = "==4.6.0"
+gunicorn = "==26.0.0"
+idna = "==3.18"
+packaging = "==26.2"
+psycopg2-binary = "==2.9.12"
+python-dotenv = "==1.2.2"
+rcssmin = "==1.2.2"
+requests = "==2.34.2"
+rjsmin = "==1.2.5"
+sqlparse = "==0.5.5"
+urllib3 = "==2.7.0"
+whitenoise = "==6.12.0"
 
 [dev-packages]
 
