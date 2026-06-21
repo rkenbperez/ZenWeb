@@ -72,7 +72,7 @@ ALLOWED_HOSTS=localhost,127.0.0.1,zenweb.onrender.com,zensmp.space,www.zensmp.sp
 # No DATABASE_URL needed - SQLite will be used automatically
 
 # Optional: PostgreSQL for production testing
-# DATABASE_URL=postgresql://username:password@localhost:5432/database_name
+# DATABASE_URL=postgresql://username:password@localhost:5432/database_name (get key from owner)
 ```
 
 #### How to Generate a Secret Key
