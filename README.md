@@ -53,7 +53,7 @@ pipenv install
 
 ### 2) Set up environment variables
 
-Create a `.env` file in the project root (`ZenWeb/.env`):
+Create a `.env` file in the project root (`zemweb/.env`):
 
 ```bash
 cd ..
