@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_tailwind_cli',
     'zen',
     
 ]
@@ -146,3 +147,5 @@ STATICFILES_DIRS = [
 
 # Storage for production
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+TAILWIND_CLI_USE_DAISY_UI = True
