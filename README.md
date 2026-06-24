@@ -241,8 +241,3 @@ For permissions beyond the scope of this license, contact:
 - **Discord:** https://discord.gg/e5DTQbWxVy
 
 ---
-
-Just copy and paste this section over your old license section in `README.md`.
-
----
-update the license sectipn
