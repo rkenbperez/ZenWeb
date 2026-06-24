@@ -223,7 +223,26 @@ python manage.py collectstatic --noinput
 
 ## License
 
-No license file is currently defined in this repository.
+**© 2026 ZenSMP Dev Team. All Rights Reserved.**
+
+This project is proprietary and confidential. You may view this code for reference and evaluation purposes only. You may not:
+
+- Redistribute, copy, or share this code (modified or unmodified)
+- Use this code for any commercial purpose
+- Fork, clone, or download this code for use outside this repository
+- Host this code on any other server without explicit written permission
+
+By viewing or using this repository, you agree to the terms in the [`LICENSE.md`](./LICENSE.md) and [`CLA.md`](./CLA.md) files.
+
+**Minecraft Disclaimer:** This project is not affiliated with Mojang Studios or Microsoft Corporation. All Minecraft-related content is the property of Mojang Studios.
+
+For permissions beyond the scope of this license, contact:
+- **Email:** rken.perez@gmail.com
+- **Discord:** https://discord.gg/e5DTQbWxVy
+
+---
+
+Just copy and paste this section over your old license section in `README.md`.
 
 ---
 update the license sectipn
