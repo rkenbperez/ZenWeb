@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.moedels import User
+from django.contrib.auth.models import User
 from django_countries.fields import CountryField
 from datetime import date
 
@@ -23,7 +23,7 @@ class Application(models.Model):
     fb_name = models.CharField(blank=True, max_length=15)
     age = models.IntegerField()
     country = CountryField()
-    minecraft_experience = models.CharField(minecraft_experience=50)
+    minecraft_experience = models.CharField(max_length=50)
     playStyle = models.CharField(50)
     first_smp = models.BooleanField(default=False)
     is_soloPlayer = models.BooleanField(default=False)
