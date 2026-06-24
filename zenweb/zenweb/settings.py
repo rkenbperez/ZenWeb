@@ -30,7 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_tailwind_cli',  # Comment out if not installed
-    'django___countries',
+    'django-countries',
     'zen',
 ]
 
