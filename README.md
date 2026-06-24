@@ -1,5 +1,3 @@
-Here's the complete README.md with the environment variables section added:
-
 ---
 
 # ZenWeb
