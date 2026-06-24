@@ -24,7 +24,7 @@ class Application(models.Model):
     age = models.IntegerField()
     country = CountryField()
     minecraft_experience = models.CharField(max_length=50)
-    playStyle = models.CharField(50)
+    playStyle = models.CharField(max_length=50)
     first_smp = models.BooleanField(default=False)
     is_soloPlayer = models.BooleanField(default=False)
     activity = models.CharField(max_length=20, choices=ACTIVITY_CHOICES, default='not_active')
