@@ -1,7 +1,7 @@
+Here's the complete README.md with the environment variables section added:
 
 ---
 
-```markdown
 # ZenWeb
 
 A modern Django-powered website for the ZenSMP Minecraft community, designed to showcase server information, features, gameplay highlights, and community links.
@@ -53,7 +53,7 @@ pipenv install
 
 ### 2) Set up environment variables
 
-Create a `.env` file in the project root (`zenweb/.env`):
+Create a `.env` file in the project root (`zemweb/.env`):
 
 ```bash
 cd ..
@@ -223,21 +223,7 @@ python manage.py collectstatic --noinput
 
 ## License
 
-**© 2026 ZenSMP Dev Team. All Rights Reserved.**
+No license file is currently defined in this repository.
 
-This project is proprietary and confidential. You may view this code for reference and evaluation purposes only. You may not:
-
-- Redistribute, copy, or share this code (modified or unmodified)
-- Use this code for any commercial purpose
-- Fork, clone, or download this code for use outside this repository
-- Host this code on any other server without explicit written permission
-
-By viewing or using this repository, you agree to the terms in the [`LICENSE.md`](./LICENSE.md) and [`CLA.md`](./CLA.md) files.
-
-**Minecraft Disclaimer:** This project is not affiliated with Mojang Studios or Microsoft Corporation. All Minecraft-related content is the property of Mojang Studios.
-
-For permissions beyond the scope of this license, contact:
-- **Email:** rken.perez@gmail.com
-- **Discord:** https://discord.gg/e5DTQbWxVy
-```
 ---
+update the license sectipn
