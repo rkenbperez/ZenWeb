@@ -23,8 +23,8 @@ sqlparse = "==0.5.5"
 urllib3 = "==2.7.0"
 whitenoise = "==6.12.0"
 django-tailwind-cli = "*"
-django-crispy-forms = "*"
 django-countries = "*"
+django-crispy-forms = "*"
 
 [dev-packages]
 
