@@ -230,7 +230,7 @@ This project is proprietary and confidential. You may view this code for referen
 - Fork, clone, or download this code for use outside this repository
 - Host this code on any other server without explicit written permission
 
-By viewing or using this repository, you agree to the terms in the [`LICENSE.md`](./LICENSE.md) and [`CLA.md`](./CLA.md) files.
+By viewing or using this repository, you agree to the terms in the [`LICENSE.md`](./LICENSE.md) and [`CLA.md`](./CONTRIBUTING.md) files.
 
 **Minecraft Disclaimer:** This project is not affiliated with Mojang Studios or Microsoft Corporation. All Minecraft-related content is the property of Mojang Studios.
 
